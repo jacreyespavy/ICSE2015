@@ -99,14 +99,14 @@ def analysis_for_file():
     end_time = time.time()
     total_time = end_time - start_time
     print()
-    print("analysis_for_file()结束！")
-    print("总耗时：", total_time, "秒")
+    print("analysis_for_file() over！")
+    print("Total time spent：", total_time, "s")
 
 
-def_index = 6 # 设置使用哪个系列的prompt/Set which series of prompts to use
-prompt_index = 11 # 设置使用系列中的第几个prompt/Set which prompt to use in the series
-res_def = get_senti_1  # 设置使用哪种方式解析ChatGPT的输出结果/Set which method to use to parse the output results of ChatGPT
-target_name = "SOF-1" # 设置分析哪个数据集/Set which dataset to analyze
+def_index = 6 # Set which series of prompts to use
+prompt_index = 11 # Set which prompt to use in the series
+res_def = get_senti_1  # Set which method to use to parse the output results of ChatGPT
+target_name = "SOF-1" # Set which dataset to analyze
 input_fname = f"input/{target_name}_test.txt"
 output_fname = f"ChatGPT/outputs/{target_name}_gpt_p{def_index}.{prompt_index}.txt"
 formated_fname = f"ChatGPT/outputs/{target_name}_formated_p{def_index}.{prompt_index}.csv"
