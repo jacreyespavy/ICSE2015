@@ -9,7 +9,7 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import TweetTokenizer
 
 
-# 初始化词还原器和停用词列表 / Initialize word restorer and stop word list
+# Initialize word restorer and stop word list
 lemmatizer = WordNetLemmatizer()
 stop_words = set(stopwords.words('english'))
 tokenizer = TweetTokenizer()
@@ -27,22 +27,22 @@ def lemmatize_tokenize(text):
         return []
 
 def eli5_explain(text_list: list,sentiment_list: list):
-    # 创建TF-IDF向量化器和逻辑回归分类器的管道 / Create pipelines for TF-IDF vectorizers and logistic regression classifiers
+    # Create pipelines for TF-IDF vectorizers and logistic regression classifiers
     pipeline = make_pipeline(
         TfidfVectorizer(tokenizer=lemmatize_tokenize),
         LogisticRegression()
     )
-    # 训练模型 / Training model
+    # Training model
     pipeline.fit(text_list, sentiment_list)
 
-    # 预测结果 / Predict results
+    # Predict results
     y_pred = pipeline.predict(text_list)
     accuracy = accuracy_score(sentiment_list, y_pred)
     print(f"Fitting Accuracy: {accuracy}")
 
-    # 获取TF-IDF Vectorizer的特征名称 / Obtain feature names for TF-IDF Vectorizer
+    # Obtain feature names for TF-IDF Vectorizer
     feature_names = pipeline.named_steps['tfidfvectorizer'].get_feature_names_out()
-    # 获取解释对象 / Get Interpretation Object
+    # Get Interpretation Object
     explanation = eli5.explain_weights(pipeline.named_steps['logisticregression'],
                                        vec=pipeline.named_steps['tfidfvectorizer'],
                                        feature_names=feature_names,)
