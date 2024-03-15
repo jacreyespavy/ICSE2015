@@ -12,15 +12,15 @@ def get_completion_by_loop(get_completion,prompt):
     while True:
         try:
             response = get_completion(prompt)
-            # 检查response是否有值
+            # Check if the response has a value
             if response is not None:
-                break  # 如果response有值，则跳出循环
+                break  # If the response has a value, jump out of the loop
         except timeout_decorator.TimeoutError as e:
-            print(f"超时异常: {e}, Retrying currently...")
+            print(f"Timeout exception: {e}, Retrying currently...")
         except Exception as e:
             sec = 30
-            print(f"发生了异常: {e}, Retrying in {sec} seconds...")
-            time.sleep(sec)  # 等待后重新运行代码
+            print(f"An exception has occurred: {e}, Retrying in {sec} seconds...")
+            time.sleep(sec)  # Wait and rerun the code
 
     return response
 
