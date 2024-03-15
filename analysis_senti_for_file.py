@@ -105,8 +105,8 @@ def analysis_for_file():
 
 def_index = 6 # Set which series of prompts to use
 prompt_index = 11 # Set which prompt to use in the series
-res_def = get_senti_1  # Set which method to use to parse the output results of ChatGPT
 target_name = "SOF-1" # Set which dataset to analyze
+res_def = get_senti_1  # Set which method to use to parse the output results of ChatGPT (Utilize get_senti_1 by default, and all reported data are based on this default def)
 input_fname = f"input/{target_name}_test.txt"
 output_fname = f"ChatGPT/outputs/{target_name}_gpt_p{def_index}.{prompt_index}.txt"
 formated_fname = f"ChatGPT/outputs/{target_name}_formated_p{def_index}.{prompt_index}.csv"
