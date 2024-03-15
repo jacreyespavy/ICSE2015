@@ -15,6 +15,7 @@ The schematic diagram of our prompting approach is as follows:
 </div>
 
 
+
 Experiments have shown that employing customized questions to guide Claude2 in extracting insights from the SESSION paper enables us to obtain the best single-paper insight. Furthermore, directly concatenating it with the single-paper insight from Senti4SD can further enhance the performance. **This best-performing paper insight can bring an average increase of 4.2% in overall accuracy and 4.6% in Macro-F compared to the basic prompt. Moreover, it can achieve the best average overall accuracy (0.817) and Macro-F (0.715) among all baseline approaches on six test sets.** (All details of the experiments can be found in the "data analysis.xlsx" file.) Thus, we consider that our insight-enhanced prompting approach is an effective way to guide ChatGPT in understanding the characteristics of sentiment expression in SE texts and better accomplishing the SA4SE task.
 
 
