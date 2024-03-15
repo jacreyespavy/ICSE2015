@@ -16,14 +16,14 @@ Experiments have shown that employing customized questions to guide Claude2 in e
 
 
 
-#### The baseline approaches used in our paper can be found in:
+### The baseline approaches used in our paper can be found in:
 
 - [SentiStrength-SE](https://laser.cs.uno.edu/Projects/Projects.html)
 - [SESSION](https://github.com/huiAlex/SESSION)
 - [Senti4SD](https://github.com/collab-uniba/Senti4SD)
 - [EASTER](https://github.com/xiaobo-lab/EASTER)
 
-#### The dataset used in our paper can be found in:
+### The dataset used in our paper can be found in:
 
 - One Stack Overflow dataset from [the work of Calefato et al.](https://github.com/collab-uniba/Senti4SD)
 - Three datasets from [the work of Lin et al.](https://sentiment-se.github.io/replication.zip)
@@ -34,7 +34,7 @@ If you need to use the aforementioned baseline approach or datasets, you are req
 
 
 
-#### Project structure：
+### Project structure：
 
 │ ├── ChatGPT/ 
 
@@ -60,7 +60,7 @@ If you need to use the aforementioned baseline approach or datasets, you are req
 
 
 
-#### How to run this project：
+### How to run this project：
 
 1. Fill in your openai.api_key in the file gptcomplete.py
 2. Set the prompt you want to use for SA4SE in the analysis_senti_for_file.py
