@@ -10,20 +10,21 @@ In this paper, we propose a paper-insight-enhanced prompting approach that utili
 
 The schematic diagram of our prompting approach is as follows:
 
+![schematic_diagram](approch_framework_02.png)
 
 
 Experiments have shown that employing customized questions to guide Claude2 in extracting insights from the SESSION paper enables us to obtain the best single-paper insight. Furthermore, directly concatenating it with the single-paper insight from Senti4SD can further enhance the performance. **This best-performing paper insight can bring an average increase of 4.2% in overall accuracy and 4.6% in Macro-F compared to the basic prompt. Moreover, it can achieve the best average overall accuracy (0.817) and Macro-F (0.715) among all baseline approaches on six test sets.** (All details of the experiments can be found in the "data analysis.xlsx" file.) Thus, we consider that our insight-enhanced prompting approach is an effective way to guide ChatGPT in understanding the characteristics of sentiment expression in SE texts and better accomplishing the SA4SE task.
 
 
 
-### The baseline approaches used in our paper can be found in:
+## The baseline approaches used in our paper can be found in:
 
 - [SentiStrength-SE](https://laser.cs.uno.edu/Projects/Projects.html)
 - [SESSION](https://github.com/huiAlex/SESSION)
 - [Senti4SD](https://github.com/collab-uniba/Senti4SD)
 - [EASTER](https://github.com/xiaobo-lab/EASTER)
 
-### The dataset used in our paper can be found in:
+## The dataset used in our paper can be found in:
 
 - One Stack Overflow dataset from [the work of Calefato et al.](https://github.com/collab-uniba/Senti4SD)
 - Three datasets from [the work of Lin et al.](https://sentiment-se.github.io/replication.zip)
@@ -34,7 +35,7 @@ If you need to use the aforementioned baseline approach or datasets, you are req
 
 
 
-### Project structure：
+## Project structure：
 
 │ ├── ChatGPT/ 
 
@@ -60,7 +61,7 @@ If you need to use the aforementioned baseline approach or datasets, you are req
 
 
 
-### How to run this project：
+## How to run this project：
 
 1. Fill in your openai.api_key in the file gptcomplete.py
 2. Set the prompt you want to use for SA4SE in the analysis_senti_for_file.py
