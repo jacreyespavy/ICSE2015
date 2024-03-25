@@ -11,7 +11,7 @@ In this paper, we propose a paper-insight-enhanced prompting approach that utili
 The schematic diagram of our prompting approach is as follows:
 
 <div align="center">
-  <img src="approch_framework.png" width="600">
+  <img src="approach_framework.png" width="600">
 </div>
 
 
