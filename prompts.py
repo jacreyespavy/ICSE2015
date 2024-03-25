@@ -19,8 +19,8 @@ Text:```{text}```
 
 
 # insight_Q1:
-# HM：According to the given paper, how to analyze sentiment for software engineering texts? Please answer within 150 words.
-# AIGC: Ans(How_To_SA4SE)
+# Prompt：According to the given paper, how to analyze sentiment for software engineering texts? Please answer within 150 words.
+# LLM Tool: Ans(How_To_SA4SE)
 # INSIGHT = {Ans(How_To_SA4SE)}
 #
 # How to use insight enhance base SA prompt:
@@ -28,6 +28,7 @@ Text:```{text}```
 #
 # get_prompt_2() is about taking paper insight from insight_Q1 to enhance the SA task.
 # "{Which paper we use} {Which AIGC we interact with} {What question we ask} {Number of repeated experiments}"
+# We did not report the discussion about InsightQ1 in the paper
 def get_prompt_2(index,text):
 
     # SESSION claude2 Q1 1.0
@@ -206,13 +207,14 @@ Text:```{text}```
 
 
 # insight_Q2:
-# HM：According to the given paper, what are the differences in sentiment expression in software engineering texts? Please answer within 50 words.
-# AIGC: Ans(What_Difference)
-# HM：According to the given paper, how to handle such software engineering texts when analyzing sentiment ? Please answer within 100 words.
-# AIGC: Ans(How_Handle)
+# Prompt：According to the given paper, what are the differences in sentiment expression in software engineering texts? Please answer within 50 words.
+# LLM Tool: Ans(What_Difference)
+# Prompt：According to the given paper, how to handle such software engineering texts when analyzing sentiment ? Please answer within 100 words.
+# LLM Tool: Ans(How_Handle)
 # INSIGHT = {Ans(What_Difference)}\n\n{Ans(How_Handle)}
 #
 # get_prompt_3() is about taking paper insigth from insight_Q2 to enhance the SA task.
+# In the paper, we named insight_Q2 as Generic Insight-Digesting Prompt (GIDP)
 def get_prompt_3(index,text):
 
     # SESSION  claude2  Q2 1.0
@@ -422,13 +424,14 @@ Text:```{text}```
 
 
 # insight_Q3:
-# HM：According to the given paper, why should we distinguish between technical descriptive text and sentiment expressive text when analyzing sentiment for software engineering texts? Please answer within 50 words.
-# AIGC: Ans(Why_Distinguish)
-# HM：According to the given paper, how to distinguish between technical descriptive text and sentiment expressive text when analyzing sentiment for software engineering texts? Please answer within 100 words.
-# AIGC: Ans(How_Distinguish)
+# Prompt：According to the given paper, why should we distinguish between technical descriptive text and sentiment expressive text when analyzing sentiment for software engineering texts? Please answer within 50 words.
+# LLM Tool: Ans(Why_Distinguish)
+# Prompt：According to the given paper, how to distinguish between technical descriptive text and sentiment expressive text when analyzing sentiment for software engineering texts? Please answer within 100 words.
+# LLM Tool: Ans(How_Distinguish)
 # INSIGHT = {Ans(Why_Distinguish)}\n\n{Ans(How_Distinguish)}
 #
 # get_prompt_4() is about taking paper insight from insight_Q3 to enhance the SA task.
+# In the paper, we named insight_Q3 as Specialized Insight-Digesting Prompt (SIDP)
 def get_prompt_4(index,text):
 
     # SESSION claude2 Q3 1.0
