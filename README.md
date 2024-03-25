@@ -1,22 +1,22 @@
 ## ICSE2025
 
-In this paper, we propose a paper-insight-enhanced prompting approach that utilizes the insights extracted from SA4SE-related papers to guide ChatGPT toward better performance in this task.
+In this paper, we propose a paper-insight-enhanced prompting approach that utilizes the insights digested from SA4SE-related papers to guide ChatGPT toward better performance in this task.
 
-**Firstly**, we guide ChatGPT to perform SA4SE tasks with a basic prompt. 
+**Firstly**, we attempt to guide the LLM tool to automatically digest insights from individual research papers. In this process, we explore various settings for insight digesting, including different paper contents (the dictionary (heuristic)-based approach paper SESSION vs. the learning-based approach paper Senti4SD vs. segments of SESSION), different LLM tools (the large-context Claude2 vs. the small-context ChatGPT3.5), and different insight-digesting prompt (generic vs. specialized). 
 
-**Then**, we attempt to guide the AIGC tool to automatically extract insights from individual research papers through questioning and enhance the basic prompt with the single-paper insights. In this process, we explore various settings for insight extraction, including different paper contents (the dictionary (heuristic)-based approach paper SESSION vs. the learning-based approach paper Senti4SD vs. segments of SESSION), different AIGC tools (the large-context Claude2 vs. the smaller-context ChatGPT3.5), and different question formulations (basic vs. detailed vs. customized). 
+**Then**, we explore to achieve further improvements by integrating knowledge from multiple papers. Our exploration of integration methods includes: 1) Digesting insights from combined papers; 2) Directly concatenating extracted single-paper insights; 3) "*Standing on the shoulders*" (Supplementing extracted single-paper insights with contents from new papers). 
 
-**Finally**, we explore to achieve further improvements by integrating knowledge from multiple papers. Our exploration of integration methods includes: 1) Extracting insights from concatenated papers; 2) Directly concatenating extracted single-paper insights; 3) Supplementing extracted single-paper insights with contents from new papers. 
+**Finally**, we employ digested insights to enhance the initial prompt for the SA4SE task.
 
 The schematic diagram of our prompting approach is as follows:
 
 <div align="center">
-  <img src="approch_framework_02.png" width="600">
+  <img src="approch_framework.png" width="600">
 </div>
 
 
 
-Experiments have shown that employing customized questions to guide Claude2 in extracting insights from the SESSION paper enables us to obtain the best single-paper insight. Furthermore, directly concatenating it with the single-paper insight from Senti4SD can further enhance the performance. **This best-performing paper insight can bring an average increase of 4.2% in overall accuracy and 4.6% in Macro-F compared to the basic prompt. Moreover, it can achieve the best average overall accuracy (0.817) and Macro-F (0.715) among all baseline approaches on six test sets.** (All detail data of the experiments can be found in the "data analysis.xlsx" file.) Thus, we consider that our insight-enhanced prompting approach is an effective way to guide ChatGPT in understanding the characteristics of sentiment expression in SE texts and better accomplishing the SA4SE task.
+Experiments have shown that posing specialized insight-digesting prompt to guide the large-context Claude2 in digesting insights from the SESSION paper which proposes a heuristic-based approach enables us to obtain the best single-paper insight. Furthermore, directly concatenating it with the single-paper insight from Senti4SD can further enhance the performance. **This best-performing paper insight can bring an average increase of 4.2% in overall accuracy and 4.6% in Macro-F compared to the initial prompt. Moreover, it can outperforms the other four SA4SE baselines on the average overall accuracy from 2.1% to 16.4%, and the average Macro-F from 4.6% to 20.8% as well, achieve the best average overall accuracy (0.817) and Macro-F (0.715) among all baseline approaches on six test sets.** (All details of the experiments can be found in the "data analysis.xlsx" file.) Thus, we consider that our insight-enhanced prompting approach is an effective way to guide ChatGPT in understanding the characteristics of sentiment expression in SE texts and better accomplishing the SA4SE task.
 
 
 
